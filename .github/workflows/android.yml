@@ -26,6 +26,16 @@ jobs:
     - name: Unit Tests
       run: bash ./gradlew test --stacktrace
 
+    - name: build release
+      run: bash ./gradlew assembleDebug
+        - name: upload artifact to Firebase App Distribution
+          uses: wzieba/Firebase-Distribution-Github-Action@v1.2.2
+          with:
+            appId: '1:220733358748:android:873e54d20701b69ef4a359'
+            token: '1//0g_ZANfNdYdv6CgYIARAAGBASNwF-L9IrYU-1cQVVFGIKdQ9AcVPl3y0Geg9VbRg1aNTA16U5lxzVZRMjby_HDrcATBLgqrO7ahg'
+            groups: testers
+            file: app/build/outputs/apk/debug/app-debug.apk
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
@@ -52,4 +62,4 @@ jobs:
           tag_name: v1.0.2
           asset_path: app/build/outputs/apk/debug/app-debug.apk
           asset_name: Android.apk
-#          asset_content_type: application/zip
+          asset_content_type: application/zip
