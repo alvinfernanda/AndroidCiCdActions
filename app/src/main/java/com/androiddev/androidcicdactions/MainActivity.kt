@@ -1,4 +1,4 @@
-package com.androiddev.andoroidcicdactions
+package com.androiddev.androidcicdactions
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

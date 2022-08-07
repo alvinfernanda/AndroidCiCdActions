@@ -1,4 +1,4 @@
-package com.androiddev.andoroidcicdactions
+package com.androiddev.androidcicdactions
 
 import org.junit.Test
 
